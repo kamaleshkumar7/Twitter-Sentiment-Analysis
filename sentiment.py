@@ -2,12 +2,11 @@ import tweepy
 from textblob import TextBlob
 import csv
 
-# Step 1 - Authenticate
-consumer_key= 'vf10Ckf8d8plWcMc2ypnsnD90'
-consumer_secret= 'hvSFHvZbudnVXJdoR4XEqhWRaPvv22dWLezK1int5Mz0Xf87VA'
+consumer_key= ''
+consumer_secret= ''
 
-access_token='740565057243750401-vn5CJlI5AOQWyFqAlzQj3NJJjiTXhee'
-access_token_secret='EEGwpCMDZ9HqPd3rLdz0LCyyKWFjDJOTyoamZ7mzYwQZD'
+access_token=''
+access_token_secret=''
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -21,11 +20,6 @@ public_tweets = api.search(keyword)
 csvFile = open('result.csv', 'a')
 
 csvWriter = csv.writer(csvFile)
-
-#CHALLENGE - Instead of printing out each tweet, save each Tweet to a CSV file
-#and label each one as either 'positive' or 'negative', depending on the sentiment 
-#You can decide the sentiment polarity threshold yourself
-
 
 for tweet in public_tweets:
     print(tweet.text)
